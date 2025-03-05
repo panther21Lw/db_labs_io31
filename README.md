@@ -1,69 +1,29 @@
+## Тема
 
-# Шаблон репозиторію для виконання лабораторних робіт з дисципліни "Організація баз даних"
+Система управління відкритими даними
 
-## Як використовувати
+## Автори
 
-В цьому репозиторії знаходиться шаблон для виконання лабораторних робіт.
+*студент 2-го курсу, групи ІО-31* **Кусовський Кирило** [Telegram](https://t.me/lolman1357911)  
 
-Для виконання лабораторних робіт необхідно зробити ```fork``` цього репозіторію, склонувати вже власний репозіторій та розміщувати документацію у відповідних діректоріях ```./docs```.
+*студент 2-го курсу, групи ІО-31* **Володенков Володимир** [Telegram](https://t.me/LimeMoon228)  
 
-В цьому файлі необхідно вказати тему лабораторних робіт (назву проекту). Коротку загальну характеристику
-проекту, контактні дані виконавця, посилання на репо співвиконавців (за необхідністю).
+*студент 2-го курсу, групи ІО-31* **Коляда Максим** [Telegram](https://t.me/Voockerry)  
 
+*студент 2-го курсу, групи ІО-31* **Мороз Артемій** [Telegram](https://t.me/Isaac0v)  
 
-Шаблон публікування підготовлено з використанням [VuePress](https://vuepress.vuejs.org/), та стартера 
-[FriendlyUser/vuepress-theme-cool-starter](https://github.com/FriendlyUser/vuepress-theme-cool-starter).
+*студент 2-го курсу, групи ІО-31* **Фарига Олексій** [Telegram](https://t.me/LLI_a_l_u_N)  
 
-Щоб опублікувати проект у Github Pages, налаштовуємо Github Pages (гілка ```gh-pages```), змінюємо файл ```./publish.sh```
+*студент 2-го курсу, групи ІО-31* **Юхимчук Богдан** [Telegram](https://t.me/Shyizik)  
 
-```sh
+## Керівник
 
-#!/usr/bin/env sh
+*доцент кафедри ОТ ФІОТ, к.т.н., доцент Андрій БОЛДАК*
 
-# abort on errors
-set -e
+[НТУУ "КИЇВСЬКИЙ ПОЛІТЕХНІЧНИЙ ІНСТИТУТ імені ІГОРЯ СІКОРСЬКОГО](https://kpi.ua/)  
 
-# build
-npm run docs:build
+[Факультет інформатики та обчислювальної техніки](https://fiot.kpi.ua/)  
 
-# navigate into the build output directory
-cd docs/.vuepress/dist
+[Кафедра обчислювальної техніки](https://comsys.kpi.ua/)
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
-git init
-git add -A
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:boldak/<USERNAME>.github.io.git master
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/<USERNAME>/dis-edu.git master:gh-pages
-
-cd -
-
-```
-
-Потім запускаємо
-
-```bash
-    npm run publish
-```
-
-Для відлагодження документації в локальному режимі запускаємо
-
-```bash
-    npm run docs:dev
-```
-
-Доступ до локально опублікованої версії [http://localhost:3030](http://localhost:3030)
-
-
-## Додаткова інформація
-
-- [Теми проєктів](./guidelines/themes.md)
-- [Методичні вказівки](./guidelines/guidelines.md)
-
-***Happy learning! Happy coding!*** 
+Київ
