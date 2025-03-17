@@ -1,4 +1,5 @@
 ---
+header: Система управління відкритими даними
 home: true
 actionText: Розпочати →
 actionLink: /intro/
