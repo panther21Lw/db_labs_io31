@@ -97,12 +97,12 @@
 
 
 #### Приклад JSON:
-{
-"timestamp": "2024-07-21T10:30:00Z",
-"name": "Іван Петренко",
-"email": "ivan.petrenko@example.com",
-"feedback": "Дані корисні для аналізу."
-}
+  {
+    "timestamp": "2024-07-21T10:30:00Z",
+    "name": "Іван Петренко",
+    "email": "ivan.petrenko@example.com",
+    "feedback": "Дані корисні для аналізу."
+  }
 
 
 ### 2. Web Scraping і парсинг
@@ -112,12 +112,12 @@
 
 
 #### Приклад JSON:
-{
-"title": "Аналіз економічних показників",
-"author": "Олег Коваленко",
-"published_date": "2023-12-10",
-"content": "Економічне зростання цього року..."
-}
+  {
+    "title": "Аналіз економічних показників",
+    "author": "Олег Коваленко",
+    "published_date": "2023-12-10",
+    "content": "Економічне зростання цього року..."
+  }
 
 ### 3. Gapminder
 ##### Процес отримання:
@@ -125,46 +125,48 @@
 - Завантаження CSV-файлів та конвертація у JSON.
 
 #### Приклад JSON:
-{
-"country": "Ukraine",
-"year": 2023,
-"life_expectancy": 72.5,
-"gdp_per_capita": 8700
-}
+  {
+    "country": "Ukraine",
+    "year": 2023,
+    "life_expectancy": 72.5,
+    "gdp_per_capita": 8700
+  }
 
 ### 4. DataBank
 ##### Процес отримання:
 - Використання API DataBank від Світового банку.
 - Отримання даних у JSON-форматі через HTTP-запити.
-
+-
 #### Приклад JSON:
-{
-"country": "Poland",
-"indicator": "GDP",
-"value": 650000,
-"year": 2023
-}
+  {
+    "country": "Poland",
+    "indicator": "GDP",
+    "value": 650000,
+    "year": 2023
+  }
 
 ### 5. G.P.D.E (Global Public Data Explorer)
 ##### Процес отримання:
 - Підключення до API G.P.D.E.
 - Отримання вибраних економічних та соціальних показників у JSON-форматі.
   ##### Приклад JSON:
-  {
-  "region": "Europe",
-  "population": 740000000,
-  "internet_users": 85
-  }
-  ### 6. Poland Stat.
-  ##### Процес отримання:
+  - 
+    {
+    "region": "Europe",
+    "population": 740000000,
+    "internet_users": 85
+    }
+- 
+### 6. Poland Stat.
+##### Процес отримання:
 - Використання офіційного порталу статистики Польщі.
-- Завантаження даних у форматі CSV/XML та їх конвертація у JSON.
-  #### Приклад JSON:
-  {
-  "region": "Mazovia",
-  "unemployment_rate": 4.2,
-  "average_salary": 5500
-  }
+  - Завантаження даних у форматі CSV/XML та їх конвертація у JSON.
+    #### Приклад JSON:
+    {
+      "region": "Mazovia",
+      "unemployment_rate": 4.2,
+      "average_salary": 5500
+    }
 
 ### 7. Eurostat
 ##### Процес отримання:
@@ -181,7 +183,8 @@
 #### Процес отримання:
 - Доступ до наукових і статистичних даних через API Dataverse.
 - Завантаження у JSON-форматі.
-  #### Приклад JSON:
+- 
+#### Приклад JSON:
   {
   "dataset_name": "Climate Data",
   "year": 2023,
@@ -192,7 +195,8 @@
 ##### Процес отримання:
 - Використання інструментів Google для отримання та візуалізації відкритих даних.
 - Експорт інформації у JSON через API.
-  ####Приклад JSON:
+- 
+#### Приклад JSON:
   {
   "indicator": "CO2 emissions",
   "country": "France",
