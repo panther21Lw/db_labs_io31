@@ -1,5 +1,32 @@
 # Модель прецедентів
 
+## Зміст
+
+- [PullInfo](#pullinfo)
+- [UpdateInfo](#updateinfo)
+- [CheckInfo](#checkinfo)
+- [Guest.Search](#guestsearch)
+- [Guest.Registration](#guestregistration)
+- [Guest.Login](#guestlogin)
+- [Guest.UseFilters](#guestusefilters)
+- [Guest.GetGraphics](#guestgetgraphics)
+- [Guest.GetReport](#guestgetreport)
+- [User.RequestSetting](#userrequestsetting)
+- [User.SaveFilters](#usersavefilters)
+- [User.DataUpdateNotification](#userdataupdatenotification)
+- [User.DownloadReport](#userdownloadreport)
+- [User.LeaveComment](#userleavecomment)
+- [User.TeamWork](#userteamwork)
+- [User.SendAddNewDataRequest](#usersendaddnewdatarequest)
+- [User.SendDataUpdateRequest](#usersenddataupdaterequest)
+- [User.Logout](#userlogout)
+- [Admin.UserAccessSettings](#adminuseraccesssettings)
+- [Admin.UpdateDataRequest](#adminupdatedatarequest)
+- [Admin.GetUserActivity](#admingetuseractivity)
+- [Admin.UploadNewData](#adminuploadnewdata)
+- [Admin.EditData](#admineditdata)
+- [Admin.RemoveData](#adminremovedata)
+
 ### PullInfo
 <br>
 
