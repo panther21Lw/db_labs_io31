@@ -130,15 +130,15 @@
     note right #d10000
     <b>Possible error:
     - Guest.LoginFormDaraError
-      - Guest.LoginDataError
-      end note
-      :шукає у базі обліковий запис із даними, що внесені у форму;
-      :знаходить обліковий запис із вказаними даними;
-      :перенаправляє користувача в особистий кабінет;
-      |Гість|
-      stop
+    - Guest.LoginDataError
+    end note
+    :шукає у базі обліковий запис із даними, що внесені у форму;
+    :знаходить обліковий запис із вказаними даними;
+    :перенаправляє користувача в особистий кабінет;
+    |Гість|
+    stop
 
-  @enduml
+@enduml
 
 ### Guest.UseFilters
 @startuml
@@ -276,7 +276,8 @@
       :надсилає сповіщення в особистий кабінет користувача при оновленні набору даних;
       |Користувач|
       stop
-      @enduml
+
+@enduml
 
 ### User.DownloadReport
 @startuml
@@ -332,7 +333,7 @@
 ### User.TeamWork
 @startuml
 
-    _skinparam ActivityBackgroundColor #f5f5f5
+    skinparam ActivityBackgroundColor #f5f5f5
     |Користувач1|
     start
     :відкриває набір даних, над яким хоче працювати у групах;
