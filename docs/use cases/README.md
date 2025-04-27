@@ -2,9 +2,8 @@
 
 ## Зміст
 
-- [PullInfo](#pullinfo)
-- [UpdateInfo](#updateinfo)
-- [CheckInfo](#checkinfo)
+
+
 - [Guest.Search](#guestsearch)
 - [Guest.Registration](#guestregistration)
 - [Guest.Login](#guestlogin)
@@ -27,103 +26,66 @@
 - [Admin.EditData](#admineditdata)
 - [Admin.RemoveData](#adminremovedata)
 
-### PullInfo
-<br>
-
-|ID: |  <span id="pull_info_from_db">PullInfo</span> |
-|---|--- |
-|**НАЗВА:** | Отримання інформації з бази.|
-|**УЧАСНИКИ:** | Користувач, система|
-|**ПЕРЕДУМОВИ:** | Запрошена інформація наявна в системі|
-|**РЕЗУЛЬТАТ:** | Користувач отримує інформацію, на яку посилав запит|
-|**ВИКЛЮЧНІ СИТУАЦІЇ:** | - Данної інформації немає в системі (InfoNotFoundExeption)|
-|**ОСНОВНИЙ СЦЕНАРІЙ:** |- Користувач відправляє запит на отримання певної інформації.<br>- Система перевіряє наявність інформації в базі. <br>- Система передає інформацію користувачу.|
-
 @startuml
 
-    skinparam ActivityBackgroundColor #f5f5f5
-    |Користувач|
-    start
-    :відправляє запит на отримання інформації;
+    actor Guest
+    actor User
+    actor Admin
     
-    |Система|
-    :система перевіряє наявність інформації;
-    note right #d10000
-    <b>Possible error:
-    - InfoNotFoundExeption
-    end note
+    usecase "Guest.Search" as GSearch
+    usecase "Guest.Registration" as GRegistration
+    usecase "Guest.Login" as GLogin
+    usecase "Guest.UseFilters" as GUseFilters
+    usecase "Guest.GetGraphics" as GGetGraphics
+    usecase "Guest.GetReport" as GGetReport
     
-    :повертає інформацію;
-    |Користувач|
-    stop
-
-@enduml
-<br>
-
-### UpdateInfo
-<br>
-
-|ID: | <span id="update_info_from_db">UpdateInfo</span>|
-|---|---|
-|**НАЗВА:** |Оновлення даних у базі до актуальних.|
-|**УЧАСНИКИ:** |Адміністратор, система|
-|**ПЕРЕДУМОВИ:** |Актуальна інформація відрізняється від тієї, що в системі|
-|**РЕЗУЛЬТАТ:** |Інформація оновлена до актуальної|
-|**ВИКЛЮЧНІ СИТУАЦІЇ:** | - Інформація не потребує оновлення (NoNewInfoExeption)|
-|**ОСНОВНИЙ СЦЕНАРІЙ:** | - Адміністратор відправляє запит на оновлення. <br>- Система перевіряє актуальність інформації в базі.<br>- Система оновлює інформацію в базі.|
-
-@startuml
-
-    skinparam ActivityBackgroundColor #f5f5f5
-
-    |Адміністратор|
-    start
-    :відправляє запит на оновлення;
+    usecase "User.RequestSetting" as URequestSetting
+    usecase "User.SaveFilters" as USaveFilters
+    usecase "User.DataUpdateNotification" as UDataUpdateNotification
+    usecase "User.DownloadReport" as UDownloadReport
+    usecase "User.LeaveComment" as ULeaveComment
+    usecase "User.TeamWork" as UTeamWork
+    usecase "User.SendAddNewDataRequest" as USendAddNewDataRequest
+    usecase "User.SendDataUpdateRequest" as USendDataUpdateRequest
+    usecase "User.Logout" as ULogout
     
-    |Система|
-    :система перевіряє актуальність інформації;
-    note right #d10000
-    <b>Possible error:
-    - NoNewInfoExeption
-    end note
+    usecase "Admin.UserAccessSettings" as AUserAccessSettings
+    usecase "Admin.UpdateDataRequest" as AUpdateDataRequest
+    usecase "Admin.GetUserActivity" as AGetUserActivity
+    usecase "Admin.UploadNewData" as AUploadNewData
+    usecase "Admin.EditData" as AEditData
+    usecase "Admin.RemoveData" as ARemoveData
     
-    :оновлює інформацію;
-    |Адміністратор|
-    stop
+    User -d-|> Guest
+    Admin -d-|> User
+    
+    Guest -> GSearch
+    Guest -> GRegistration
+    Guest -> GLogin
+    Guest -> GUseFilters
+    Guest -> GGetGraphics
+    Guest -> GGetReport
+    
+    User -> URequestSetting
+    User -> USaveFilters
+    User -> UDataUpdateNotification
+    User -> UDownloadReport
+    User -> ULeaveComment
+    User -> UTeamWork
+    User -> USendAddNewDataRequest
+    User -> USendDataUpdateRequest
+    User -> ULogout
+    
+    Admin -> AUserAccessSettings
+    Admin -> AUpdateDataRequest
+    Admin -> AGetUserActivity
+    Admin -> AUploadNewData
+    Admin -> AEditData
+    Admin -> ARemoveData
 
 @enduml
 
-### CheckInfo
-<br>
-
-|ID: | <span id="check_info_in_db">CheckInfo </span>|
-|--|--|
-|**НАЗВА:** |Перевірка даних на достовірність.|
-|**УЧАСНИКИ:** |Адміністратор, система|
-|**ПЕРЕДУМОВИ:** |Певні дані є недостовірними|
-|**РЕЗУЛЬТАТ:** |Інформація оновлюється до правильної|
-|**ВИКЛЮЧНІ СИТУАЦІЇ:** |- Інформація є достовірною (NoFalseInfoExeption)|
-|**ОСНОВНИЙ СЦЕНАРІЙ:** | - Адміністратор відправляє запит на перевірку даних.<br>- Система перевіряє дані на правдивість.<br>- Адміністратор вносить у систему коректні дані.<br>- Система оновлює інформацію в базі.|
-
-@startuml
-
-    skinparam ActivityBackgroundColor #f5f5f5
-    |Адміністратор|
-    start
-    :відправляє запит на перевірку на достовірність;
-    
-    |Система|
-    :система перевіряє достовірність інформації;
-    note right #d10000
-    <b>Possible error:
-    - NoFalseInfoExeption
-    end note
-    
-    :оновлює інформацію;
-    |Адміністратор|
-    stop
-
-@enduml
+@start
 
 ### Guest.Search
 <br>
