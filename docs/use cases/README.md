@@ -32,56 +32,39 @@
     actor User
     actor Admin
     
-    usecase "Guest.Search" as GSearch
-    usecase "Guest.Registration" as GRegistration
-    usecase "Guest.Login" as GLogin
-    usecase "Guest.UseFilters" as GUseFilters
-    usecase "Guest.GetGraphics" as GGetGraphics
-    usecase "Guest.GetReport" as GGetReport
+    rectangle "Guest Functional" {
+    Guest -> Guest.Search
+    Guest -> Guest.Registration
+    Guest -> Guest.Login
+    Guest -> Guest.UseFilters
+    Guest -> Guest.GetGraphics
+    Guest -> Guest.GetReport
+    }
     
-    usecase "User.RequestSetting" as URequestSetting
-    usecase "User.SaveFilters" as USaveFilters
-    usecase "User.DataUpdateNotification" as UDataUpdateNotification
-    usecase "User.DownloadReport" as UDownloadReport
-    usecase "User.LeaveComment" as ULeaveComment
-    usecase "User.TeamWork" as UTeamWork
-    usecase "User.SendAddNewDataRequest" as USendAddNewDataRequest
-    usecase "User.SendDataUpdateRequest" as USendDataUpdateRequest
-    usecase "User.Logout" as ULogout
+    rectangle "User Functional" {
+    User -> User.RequestSetting
+    User -> User.SaveFilters
+    User -> User.DataUpdateNotification
+    User -> User.DownloadReport
+    User -> User.LeaveComment
+    User -> User.TeamWork
+    User -> User.SendAddNewDataRequest
+    User -> User.SendDataUpdateRequest
+    User -> User.Logout
+    }
     
-    usecase "Admin.UserAccessSettings" as AUserAccessSettings
-    usecase "Admin.UpdateDataRequest" as AUpdateDataRequest
-    usecase "Admin.GetUserActivity" as AGetUserActivity
-    usecase "Admin.UploadNewData" as AUploadNewData
-    usecase "Admin.EditData" as AEditData
-    usecase "Admin.RemoveData" as ARemoveData
+    rectangle "Admin Functional" {
+    Admin -> Admin.UserAccessSettings
+    Admin -> Admin.UpdateDataRequest
+    Admin -> Admin.GetUserActivity
+    Admin -> Admin.UploadNewData
+    Admin -> Admin.EditData
+    Admin -> Admin.RemoveData
+    }
     
+    ' Наследование
     User -d-|> Guest
     Admin -d-|> User
-    
-    Guest -> GSearch
-    Guest -> GRegistration
-    Guest -> GLogin
-    Guest -> GUseFilters
-    Guest -> GGetGraphics
-    Guest -> GGetReport
-    
-    User -> URequestSetting
-    User -> USaveFilters
-    User -> UDataUpdateNotification
-    User -> UDownloadReport
-    User -> ULeaveComment
-    User -> UTeamWork
-    User -> USendAddNewDataRequest
-    User -> USendDataUpdateRequest
-    User -> ULogout
-    
-    Admin -> AUserAccessSettings
-    Admin -> AUpdateDataRequest
-    Admin -> AGetUserActivity
-    Admin -> AUploadNewData
-    Admin -> AEditData
-    Admin -> ARemoveData
 
 @enduml
 
