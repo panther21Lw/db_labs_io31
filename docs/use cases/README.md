@@ -1,74 +1,184 @@
 # Модель прецедентів
 
 ## Зміст
+- [Діаграми моделі](#діаграми-моделі)
+    - [Загальна діаграма моделі](#загальна-діаграма-моделі)
+    - [Діаграма моделі сценаріїв гостя](#діаграма-моделі-сценаріїв-гостя)
+    - [Діаграма моделі сценаріїв користувача](#діаграма-моделі-сценаріїв-користувача)
+    - [Діаграма моделі сценаріїв адміністратора](#діаграма-моделі-сценаріїв-адміністратора)
+- [Опис сценаріїв](#опис-сценаріїв)
+    - [Guest.Search](#guestsearch)
+    - [Guest.Registration](#guestregistration)
+    - [Guest.Login](#guestlogin)
+    - [Guest.UseFilters](#guestusefilters)
+    - [Guest.GetGraphics](#guestgetgraphics)
+    - [Guest.GetReport](#guestgetreport)
+    - [User.RequestSetting](#userrequestsetting)
+    - [User.SaveFilters](#usersavefilters)
+    - [User.DataUpdateNotification](#userdataupdatenotification)
+    - [User.DownloadReport](#userdownloadreport)
+    - [User.LeaveComment](#userleavecomment)
+    - [User.TeamWork](#userteamwork)
+    - [User.SendAddNewDataRequest](#usersendaddnewdatarequest)
+    - [User.SendDataUpdateRequest](#usersenddataupdaterequest)
+    - [User.Logout](#userlogout)
+    - [Admin.UserAccessSettings](#adminuseraccesssettings)
+    - [Admin.UpdateDataRequest](#adminupdatedatarequest)
+    - [Admin.GetUserActivity](#admingetuseractivity)
+    - [Admin.UploadNewData](#adminuploadnewdata)
+    - [Admin.EditData](#admineditdata)
+    - [Admin.RemoveData](#adminremovedata)
 
+## Діаграми моделі
+<br>
 
-
-- [Guest.Search](#guestsearch)
-- [Guest.Registration](#guestregistration)
-- [Guest.Login](#guestlogin)
-- [Guest.UseFilters](#guestusefilters)
-- [Guest.GetGraphics](#guestgetgraphics)
-- [Guest.GetReport](#guestgetreport)
-- [User.RequestSetting](#userrequestsetting)
-- [User.SaveFilters](#usersavefilters)
-- [User.DataUpdateNotification](#userdataupdatenotification)
-- [User.DownloadReport](#userdownloadreport)
-- [User.LeaveComment](#userleavecomment)
-- [User.TeamWork](#userteamwork)
-- [User.SendAddNewDataRequest](#usersendaddnewdatarequest)
-- [User.SendDataUpdateRequest](#usersenddataupdaterequest)
-- [User.Logout](#userlogout)
-- [Admin.UserAccessSettings](#adminuseraccesssettings)
-- [Admin.UpdateDataRequest](#adminupdatedatarequest)
-- [Admin.GetUserActivity](#admingetuseractivity)
-- [Admin.UploadNewData](#adminuploadnewdata)
-- [Admin.EditData](#admineditdata)
-- [Admin.RemoveData](#adminremovedata)
-
+### Загальна діаграма моделі
 @startuml
+
+    skinparam monochrome true
+    skinparam ranksep 80
+    skinparam nodesep 50
 
     actor Guest
     actor User
     actor Admin
     
-    rectangle "Guest Functional" {
-    Guest -> Guest.Search
-    Guest -> Guest.Registration
-    Guest -> Guest.Login
-    Guest -> Guest.UseFilters
-    Guest -> Guest.GetGraphics
-    Guest -> Guest.GetReport
-    }
+    Guest .down.> User : <<extends>>
+    User .down.> Admin : <<extends>>
     
-    rectangle "User Functional" {
-    User -> User.RequestSetting
-    User -> User.SaveFilters
-    User -> User.DataUpdateNotification
-    User -> User.DownloadReport
-    User -> User.LeaveComment
-    User -> User.TeamWork
-    User -> User.SendAddNewDataRequest
-    User -> User.SendDataUpdateRequest
-    User -> User.Logout
-    }
+    usecase "Search" as GSearch
+    usecase "Registration" as GRegistration
+    usecase "Login" as GLogin
+    usecase "Use Filters" as GUseFilters
+    usecase "Get Graphics" as GGetGraphics
+    usecase "Get Report" as GGetReport
     
-    rectangle "Admin Functional" {
-    Admin -> Admin.UserAccessSettings
-    Admin -> Admin.UpdateDataRequest
-    Admin -> Admin.GetUserActivity
-    Admin -> Admin.UploadNewData
-    Admin -> Admin.EditData
-    Admin -> Admin.RemoveData
-    }
+    usecase "Request Setting" as URequestSetting
+    usecase "Save Filters" as USaveFilters
+    usecase "Data Update Notification" as UDataUpdateNotification
+    usecase "Download Report" as UDownloadReport
+    usecase "Leave Comment" as ULeaveComment
+    usecase "Team Work" as UTeamWork
+    usecase "Send Add New Data Request" as USendAddNewDataRequest
+    usecase "Send Data Update Request" as USendDataUpdateRequest
+    usecase "Logout" as ULogout
     
-    ' Наследование
-    User -d-|> Guest
-    Admin -d-|> User
+    usecase "User Access Settings" as AUserAccessSettings
+    usecase "Update Data Request" as AUpdateDataRequest
+    usecase "Get User Activity" as AGetUserActivity
+    usecase "Upload New Data" as AUploadNewData
+    usecase "Edit Data" as AEditData
+    usecase "Remove Data" as ARemoveData
+    
+    Guest -up-> GSearch
+    Guest -up-> GRegistration
+    Guest -up-> GLogin
+    Guest -up-> GUseFilters
+    Guest -up-> GGetGraphics
+    Guest -up-> GGetReport
+    
+    User -left-> URequestSetting
+    User -left-> USaveFilters
+    User -left-> UDataUpdateNotification
+    User -left-> UDownloadReport
+    User -left-> ULeaveComment
+    User -right-> UTeamWork
+    User -right-> USendAddNewDataRequest
+    User -right-> USendDataUpdateRequest
+    User -right-> ULogout
+    
+    Admin -down-> AUserAccessSettings
+    Admin -down-> AUpdateDataRequest
+    Admin -down-> AGetUserActivity
+    Admin -down-> AUploadNewData
+    Admin -down-> AEditData
+    Admin -down-> ARemoveData
 
 @enduml
 
-@start
+### Діаграма моделі сценаріїв гостя
+@startuml
+
+    skinparam monochrome true
+    skinparam ranksep 80
+    skinparam nodesep 50
+
+    actor Guest
+
+    usecase "Search" as GSearch
+    usecase "Registration" as GRegistration
+    usecase "Login" as GLogin
+    usecase "Use Filters" as GUseFilters
+    usecase "Get Graphics" as GGetGraphics
+    usecase "Get Report" as GGetReport
+
+    Guest -up-> GSearch
+    Guest -up-> GRegistration
+    Guest -up-> GLogin
+    Guest -up-> GUseFilters
+    Guest -up-> GGetGraphics
+    Guest -up-> GGetReport
+
+@enduml
+
+### Діаграма моделі сценаріїв користувача
+@startuml
+
+    skinparam monochrome true
+    skinparam ranksep 80
+    skinparam nodesep 50
+
+    actor User
+    
+    usecase "Request Setting" as URequestSetting
+    usecase "Save Filters" as USaveFilters
+    usecase "Data Update Notification" as UDataUpdateNotification
+    usecase "Download Report" as UDownloadReport
+    usecase "Leave Comment" as ULeaveComment
+    usecase "Team Work" as UTeamWork
+    usecase "Send Add New Data Request" as USendAddNewDataRequest
+    usecase "Send Data Update Request" as USendDataUpdateRequest
+    usecase "Logout" as ULogout
+
+    User -up-> URequestSetting
+    User -up-> USaveFilters
+    User -up-> UDataUpdateNotification
+    User -up-> UDownloadReport
+    User -up-> ULeaveComment
+    User -down-> UTeamWork
+    User -down-> USendAddNewDataRequest
+    User -down-> USendDataUpdateRequest
+    User -down-> ULogout
+
+@enduml
+
+### Діаграма моделі сценаріїв адміністратора
+@startuml
+
+    skinparam monochrome true
+    skinparam ranksep 80
+    skinparam nodesep 50
+
+    actor Admin 
+
+    usecase "User Access Settings" as AUserAccessSettings
+    usecase "Update Data Request" as AUpdateDataRequest
+    usecase "Get User Activity" as AGetUserActivity
+    usecase "Upload New Data" as AUploadNewData
+    usecase "Edit Data" as AEditData
+    usecase "Remove Data" as ARemoveData
+
+    Admin -down-> AUserAccessSettings
+    Admin -down-> AUpdateDataRequest
+    Admin -down-> AGetUserActivity
+    Admin -down-> AUploadNewData
+    Admin -down-> AEditData
+    Admin -down-> ARemoveData
+
+@enduml
+
+## Опис сценаріїв
+<br>
 
 ### Guest.Search
 <br>
