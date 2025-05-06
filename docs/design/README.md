@@ -125,3 +125,97 @@
 <br>
 
 ## ER-Модель
+
+@startuml
+    left to right direction
+    
+    entity User {
+    id : serial
+    --
+    first_name : varchar
+    last_name : varchar
+    age : integer
+    email : varchar
+    password : varchar
+    phone_number : varchar
+    }
+    
+    entity Role {
+    id : serial
+    --
+    status : varchar
+    description : text
+    }
+    
+    entity Response {
+    id : serial
+    --
+    description : text
+    graphic : text
+    }
+    
+    entity Request {
+    id : serial
+    --
+    time : timestamp
+    url : varchar
+    }
+    
+    entity Context {
+    id : serial
+    --
+    filter : varchar
+    category : varchar
+    date : date
+    }
+    
+    entity Request_Context {
+    id : serial
+    --
+    request_id: bigint
+    context_id: bigint
+    }
+    
+    entity DataSet {
+    id : serial
+    --
+    text : text
+    image_url : varchar
+    diagram : text
+    label : varchar
+    source : varchar
+    created_att : timestamp
+    }
+    
+    entity Request_Response {
+    id : serial
+    --
+    request_id: bigint
+    response_id: bigint
+    }
+    
+    entity Feedback {
+    id : serial
+    --
+    response_id : integer
+    user_id : integer
+    title : varchar
+    content : text
+    }
+    
+    User "0..*" -- "1" Role
+    User "1" -- "0..*" Request
+    User "1" -- "0..*" Response
+    User "1" -- "0..*" Feedback
+    
+    Request "1" -- "0..*" Request_Context
+    Request_Context "0..*" -- "1" Context
+    
+    Request "1" -- "0..*" Request_Response
+    Request_Response "0..*" -- "1" Response
+    
+    Response "1" -- "0..*" DataSet
+    Response "1" -- "0..*" Feedback
+
+@enduml
+
