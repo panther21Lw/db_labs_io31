@@ -96,13 +96,13 @@
     entity Feedback.response_id #E6C6A5
     entity Feedback.user_id #E6C6A5
     entity Feedback.title #E6C6A5
-    entity Feedback.content #E6C6A5
+    entity Feedback.comment #E6C6A5
     
     Feedback.id --* Feedback
     Feedback.response_id --* Feedback
     Feedback.user_id --* Feedback
     Feedback.title --* Feedback
-    Feedback.content --* Feedback
+    Feedback.comment --* Feedback
     
     
     User "0,*" -d- "1,1" Role
@@ -200,7 +200,7 @@
         response_id : integer
         user_id : integer
         title : varchar
-        content : text
+        comment : text
     }
     
     User "0..*" -- "1" Role
