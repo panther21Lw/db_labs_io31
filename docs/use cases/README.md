@@ -18,7 +18,6 @@
     - [User.DataUpdateNotification](#userdataupdatenotification)
     - [User.DownloadReport](#userdownloadreport)
     - [User.LeaveComment](#userleavecomment)
-    - [User.TeamWork](#userteamwork)
     - [User.SendAddNewDataRequest](#usersendaddnewdatarequest)
     - [User.SendDataUpdateRequest](#usersenddataupdaterequest)
     - [User.Logout](#userlogout)
@@ -58,7 +57,6 @@
     usecase "Data Update Notification" as UDataUpdateNotification
     usecase "Download Report" as UDownloadReport
     usecase "Leave Comment" as ULeaveComment
-    usecase "Team Work" as UTeamWork
     usecase "Send Add New Data Request" as USendAddNewDataRequest
     usecase "Send Data Update Request" as USendDataUpdateRequest
     usecase "Logout" as ULogout
@@ -82,7 +80,6 @@
     User -left-> UDataUpdateNotification
     User -left-> UDownloadReport
     User -left-> ULeaveComment
-    User -right-> UTeamWork
     User -right-> USendAddNewDataRequest
     User -right-> USendDataUpdateRequest
     User -right-> ULogout
@@ -135,7 +132,6 @@
     usecase "Data Update Notification" as UDataUpdateNotification
     usecase "Download Report" as UDownloadReport
     usecase "Leave Comment" as ULeaveComment
-    usecase "Team Work" as UTeamWork
     usecase "Send Add New Data Request" as USendAddNewDataRequest
     usecase "Send Data Update Request" as USendDataUpdateRequest
     usecase "Logout" as ULogout
@@ -145,7 +141,6 @@
     User -up-> UDataUpdateNotification
     User -up-> UDownloadReport
     User -up-> ULeaveComment
-    User -down-> UTeamWork
     User -down-> USendAddNewDataRequest
     User -down-> USendDataUpdateRequest
     User -down-> ULogout
@@ -560,49 +555,6 @@
     :додає коментар до набору даних;
     :сповіщає користувача про успішне додавання коментаря;
     |Користувач|
-    stop
-
-@enduml
-
-### User.TeamWork
-<br>
-
-|**ID:**| User.TeamWork |
-|--|--|
-|**НАЗВА:**|Робота користувачів у групі|
-|**УЧАСНИКИ:**|Зареєстровані користувачі: Користувач1 та Користувач2, система|
-|**ПЕРЕДУМОВИ:**|Користувач1 та Користувач2 авторизовані у системі і не мають обмежень щодо спільної роботи з іншими користувачами.|
-|**РЕЗУЛЬТАТ:**|Користувачі можуть працювати над даними у групі.|
-|**ВИКЛЮЧНІ СИТУАЦІЇ:**|- Користувача, дані якого введені у форму, не існує у системі - User.UserNotExistError<br> - Користувач2 відмовився від роботи у групі - User.GroupInviteReject|
-|**ОСНОВНИЙ СЦЕНАРІЙ:**|- Користувач1 відкриває набір даних, над яким хоче працювати у групах.<br> - Користувач1 натискає кнопку "Додати користувача".<br> - Система створює форму для додавання користувача та передає її Користувачу1.<br> - Користувач1 заповнює форму та повертає її у систему.<br> - Система перевіряє правильність заповнення форми.<br> - Система надсилає Користувачу2, дані якого введені у формі, запрошення про участь у роботі у групі в особистий кабінет.<br> - Система сповіщає Користувача1 про успішне відправлення запрошення до Користувач2<br> - Користувач2 заходить в особистий кабінет та приймає рішення про участь у групі.<br> - Система додає Користувача2 до розробників набору даних Користувача1.|
-
-@startuml
-
-    skinparam ActivityBackgroundColor #f5f5f5
-    |Користувач1|
-    start
-    :відкриває набір даних, над яким хоче працювати у групах;
-    :натискає кнопку "Додати користувача";
-    |Система|
-    :створює форму для додавання користувача та передає її Користувачу1;
-    |Користувач1|
-    :заповнює форму та повертає її у систему;
-    |Система|
-    :перевіряє правильність заповнення форми;
-    note right #d10000
-    <b>Possible error:
-    - User.UserNotExistError
-    end note
-    :надсилає Користувачу2 запрошення про участь у роботі у групі;
-    :сповіщає Користувача1 про успішне відправлення запрошення до Користувач2;
-    |Користувач2|
-    :заходить в особистий кабінет та приймає рішення про участь у групі;
-    note right #d10000
-    <b>Possible error:
-    - User.GroupInviteReject  
-    end note
-    |Система|
-    :додає Користувача2 до розробників набору даних Користувача1;
     stop
 
 @enduml
