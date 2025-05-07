@@ -222,4 +222,5 @@
 <hr>
 <br>
 
-## Реляційна схема
+## Реляційна схема!
+![Picture](images/Untitled.png)
