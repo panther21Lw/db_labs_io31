@@ -2,7 +2,7 @@
 
 ## SQL скрипти:
 
-```
+```sql
 CREATE TABLE IF NOT EXISTS roles (
     id SERIAL PRIMARY KEY NOT NULL,
     status VARCHAR(30) NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS feedbacks (
 
 ### Insert scripts:
 
-```
+```sql
 INSERT INTO roles (status, description) VALUES
 ('Admin', 'Administrator with full access'),
 ('Editor', 'User who can edit content'),
