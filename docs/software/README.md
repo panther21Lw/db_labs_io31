@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS request_responses (
 
 CREATE TABLE IF NOT EXISTS datasets (
     id SERIAL PRIMARY KEY NOT NULL,
-    response_id INTEGER NOT NULL,
+    response_id INTEGER,
     text TEXT NOT NULL,
     image_url VARCHAR(500) NOT NULL,
     diagram TEXT NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS datasets (
 
 CREATE TABLE IF NOT EXISTS feedbacks (
     id SERIAL PRIMARY KEY NOT NULL,
-    response_id INTEGER NOT NULL,
+    response_id INTEGER,
     user_id INTEGER NOT NULL,
     title VARCHAR(100) NOT NULL,
     comment TEXT NOT NULL,
