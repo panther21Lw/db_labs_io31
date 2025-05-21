@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS feedbacks (
 );
 ```
 
-### Insert scripts:
+## Insert scripts:
 
 ```sql
 INSERT INTO roles (status, description) VALUES
@@ -132,8 +132,3 @@ INSERT INTO feedbacks (response_id, user_id, title, comment) VALUES
 (3, 1, 'Perfect', 'Exactly what I was looking for.');
 
 ```
-
-
-## TODO:
-- RESTfull сервіс для управління даними
-
