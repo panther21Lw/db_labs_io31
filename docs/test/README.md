@@ -44,38 +44,38 @@ mvn spring-boot:run
 #### GET All
 ![ResponseGetAll.png](../../images/ResponseGetAll.png)
 #### GET By ID
-![Знімок екрана 2025-05-21 о 13.17.42.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.17.42.png)
+![ResponseGetById.png](../../images/ResponseGetById.png)
 #### POST
-![Знімок екрана 2025-05-21 о 13.19.18.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.19.18.png)
+![ResponsePost.png](../../images/ResponsePost.png)
 #### PUT
-![Знімок екрана 2025-05-21 о 13.21.02.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.21.02.png)
+![ResponsePut.png](../../images/ResponsePut.png)
 #### DELETE
-![Знімок екрана 2025-05-21 о 13.22.47.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.22.47.png)
+![ResponseDelete.png](../../images/ResponseDelete.png)
 <hr>
 
 ### Dataset:
 
 #### GET All
-![Знімок екрана 2025-05-21 о 13.23.42.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.23.42.png)
+![DatasetGetAll.png](../../images/DatasetGetAll.png)
 #### GET By ID
-![Знімок екрана 2025-05-21 о 13.24.14.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.24.14.png)
+![DatasetGetById.png](../../images/DatasetGetById.png)
 #### POST
-![Знімок екрана 2025-05-21 о 13.25.41.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.25.41.png)
+![DatasetPost.png](../../images/DatasetPost.png)
 #### PUT
-![Знімок екрана 2025-05-21 о 13.26.51.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.26.51.png)
+![DatasetPut.png](../../images/DatasetPut.png)
 #### DELETE
-![Знімок екрана 2025-05-21 о 13.27.18.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.27.18.png)
+![DatasetDelete.png](../../images/DatasetDelete.png)
 <hr>
 
 ### Feedback:
 
 #### GET All
-![Знімок екрана 2025-05-21 о 13.28.43.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.28.43.png)
+![FeedbackGetAll.png](../../images/FeedbackGetAll.png)
 #### GET By ID
-![Знімок екрана 2025-05-21 о 13.29.09.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.29.09.png)
+![FeedbackGetById.png](../../images/FeedbackGetById.png)
 #### POST
-![Знімок екрана 2025-05-21 о 13.29.52.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.29.52.png)
+![FeedbackPost.png](../../images/FeedbackPost.png)
 #### PUT
-![Знімок екрана 2025-05-21 о 13.30.32.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.30.32.png)
+![FeedbackPut.png](../../images/FeedbackPut.png)
 #### DELETE
-![Знімок екрана 2025-05-21 о 13.31.16.png](../../images/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20%D0%BE%2013.31.16.png)
+![FeedbackDelete.png](../../images/FeedbackDelete.png)
