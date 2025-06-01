@@ -1,37 +1,19 @@
 # Тестування працездатності системи
+Збірку та тестування будемо проводити за допомогою Maven
+
+
+## Збірка проекту
+
+Із директорії ./src/api/db_lab_6 виконуємо команду для збірки проекту
+
+```bash
+mvn clean install
+```
 
 ## Запуск тестування
 
-переходимо в директориію src/api/db_lab_6 де вихідний код api
+Запускаємо додаток за допомогою команди
 
-```bash
-cd src/api/db_lab_6
-```
-
-перевіряємо, чи встановлено maven:
-
-```bash
-mvn --version
-```
-
-якщо ні, то встановлюємо maven на нашу ОС.
-<br>
-<br>
-
-компілюємо та збираємо прооект
-
-```bash
-mvn clean package
-```
-
-запускаємо проект за допомогою java
-
-```bash
-cd target
-java -jar db_lab_6-0.0.1-SNAPSHOT.jar
-```
-
-Або ж запускаємо за допомогою maven (перед цим не треба додатково збирати та запаковувати проект)
 ```bash
 mvn spring-boot:run
 ```
@@ -39,43 +21,41 @@ mvn spring-boot:run
 
 ## Тестування
 
-### Response:
+### User:
 
 #### GET All
-![ResponseGetAll.png](../../images/ResponseGetAll.png)
+![UserGetAll.png](../../images/UserGetAll.png)
 #### GET By ID
-![ResponseGetById.png](../../images/ResponseGetById.png)
+![UserGetById.png](../../images/UserGetById.png)
 #### POST
-![ResponsePost.png](../../images/ResponsePost.png)
+![UserPost.png](../../images/UserPost.png)
 #### PUT
-![ResponsePut.png](../../images/ResponsePut.png)
+![UserPut.png](../../images/UserPut.png)
+![UserPutResult](../../images/UserPutconsole.png)
 #### DELETE
-![ResponseDelete.png](../../images/ResponseDelete.png)
+![UserDelete.png](../../images/UserDelete.png)
+
 <hr>
 
-### Dataset:
+### Request:
 
 #### GET All
-![DatasetGetAll.png](../../images/DatasetGetAll.png)
+![RequestGetAll.png](../../images/RequestGetAll.png)
 #### GET By ID
-![DatasetGetById.png](../../images/DatasetGetById.png)
+![RequestGetById.png](../../images/RequestGetById.png)
 #### POST
-![DatasetPost.png](../../images/DatasetPost.png)
-#### PUT
-![DatasetPut.png](../../images/DatasetPut.png)
-#### DELETE
-![DatasetDelete.png](../../images/DatasetDelete.png)
-<hr>
+![RequestPost.png](../../images/RequestPost.png)
 
-### Feedback:
+З таблиці requests виберемо всі записи. Бачимо, що новий запит з id=4 успішно доданий
+![NewRequest.png](../../images/NewRequest.png)
 
-#### GET All
-![FeedbackGetAll.png](../../images/FeedbackGetAll.png)
-#### GET By ID
-![FeedbackGetById.png](../../images/FeedbackGetById.png)
-#### POST
-![FeedbackPost.png](../../images/FeedbackPost.png)
 #### PUT
-![FeedbackPut.png](../../images/FeedbackPut.png)
+![RequestPut.png](../../images/RequestPut.png)
+
+З таблиці requests виберемо всі записи. Бачимо, що запит з id=4 змінив user_id із 3 на 2 та вміст стовпця url був
+замінений на /api/data/task/changed
+
+![PutRequest.png](../../images/PutRequest.png)
+
 #### DELETE
-![FeedbackDelete.png](../../images/FeedbackDelete.png)
+![RequestDelete.png](../../images/RequestDelete.png)
